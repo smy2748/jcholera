@@ -22,7 +22,8 @@ public class Fort extends Controller {
 
     public static Result createFort(){
        Form<GameForm> completedForm = gameForm.bindFromRequest();
-       Game g = new Game(completedForm.name, completedForm.description, completedForm.mapLink);
+       Game g = new Game(completedForm.field("name").value(),
+               completedForm.field("description").value(), completedForm.field("mapLink").value());
        g.save();
        return ok(); 
     }
