@@ -6139,9 +6139,11 @@ a.thumbnail.active {
 .nounderline:visited,
 .nounderline:focus {
   text-decoration: none;
+  text-decoration-skip: objects;
 }
 
 .thumbnail a:hover p {
  text-decoration: none;
+ text-decoration-skip: objects;
 }
 
