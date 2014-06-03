@@ -6141,4 +6141,7 @@ a.thumbnail.active {
   text-decoration: none
 }
 
+.thumbnail a:hover p {
+ text-decoration: none 
+}
 
