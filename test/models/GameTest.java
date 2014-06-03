@@ -1,9 +1,12 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import models.Game;
 import org.junit.*;
 
 import play.mvc.*;
@@ -26,12 +29,15 @@ import static org.fest.assertions.Assertions.*;
 * If you are interested in mocking a whole application, see the wiki for more details.
 *
 */
-public class ApplicationTest {
+public class GameTest {
 
     @Test
     public void simpleCheck() {
-        int a = 1 + 1;
-        assertThat(a).isEqualTo(2);
+        Game g = new Game();
+
+        g.setName("Name");
+        g.setDescription("Desc");
+        g.setStartMapLink("Summer in da city");
     }
 
     @Test
