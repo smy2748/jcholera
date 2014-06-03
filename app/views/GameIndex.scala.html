@@ -1,5 +1,21 @@
-@(games: List<Game>)
+@(games: List[Game])
 
 @main(""){
-        @games.size()
+
+  <table>
+    <tr> 
+      <th>Name</th>
+      <th>Description</th>
+      <th>Map Link</th>
+    </tr>
+    
+    @for(g <- games){
+     <tr>
+      <td>@g.getName()</td>
+      <td>@g.getDescription</td>
+      <td>@g.getStartMapLink()</td>
+     </tr>
+    }
+  </table>
+      
     }
