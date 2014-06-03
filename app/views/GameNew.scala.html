@@ -2,7 +2,7 @@
 
 @main(""){
   
-  @helper.form(action=routes.Fort.newFort()){
+  @helper.form(action=routes.Fort.createFort()){
     
     @helper.inputText(gameForm("name"))
 
@@ -10,7 +10,7 @@
  
     @helper.inputText(gameForm("mapLink"))
 
-    <input type="submit" />
+    <input type="submit" value="create"/>
 
   }
 

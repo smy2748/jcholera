@@ -27,4 +27,8 @@ public class Fort extends Controller {
        g.save();
        return ok(); 
     }
+
+    public static Result showGame(Long id){
+       return ok();
+    }
 }
