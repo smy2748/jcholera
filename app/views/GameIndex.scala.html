@@ -2,20 +2,24 @@
 
 @main(""){
 
-  <table>
-    <tr> 
-      <th>Name</th>
-      <th>Description</th>
-      <th>Map Link</th>
-    </tr>
-    
-    @for(g <- games){
-     <tr>
-      <td>@g.getName()</td>
-      <td>@g.getDescription</td>
-      <td>@g.getStartMapLink()</td>
-     </tr>
-    }
-  </table>
+
+
+<div class="well well-lg">
+<div class="row">
+<h1 class="pull-left">Hosted Games</h1>
+<h1><a class="btn btn-primary pull-right" href= @controllers.routes.Fort.newFort()>New Fort</a></h1>
+</div>
+<div class="row">
+@for(g <- games){
+  <div class="col-xs-5 col-md-3">
+   <a class="thumbnail nounderline"href=@{controllers.routes.Fort.showGame(g.getId)}>
+    <h2 class = "text-center nounderline">@g.getName()</h2>
+    <p class="nounderline">@g.getDescription()</p>
+   </a>
+  </div>
+}
+</div>
+</div>
+
       
     }

@@ -25,7 +25,7 @@ public class Fort extends Controller {
        Game g = new Game(completedForm.field("name").value(),
                completedForm.field("description").value(), completedForm.field("mapLink").value());
        g.save();
-       return ok(); 
+       return ok(GameShow.render(g)); 
     }
 
     public static Result showGame(Long id){
