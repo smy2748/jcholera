@@ -32,19 +32,18 @@ import static org.fest.assertions.Assertions.*;
 public class GameTest {
 
     @Test
-    public void simpleCheck() {
-        Game g = new Game();
+    public void saveGameTest() {
+        
+      running(fakeApplication(), new Runnable() {
+        public void run() {
+          Game g = new Game();
 
-        g.setName("Name");
-        g.setDescription("Desc");
-        g.setStartMapLink("Summer in da city");
-    }
+          g.setName("Name");
+          g.setDescription("Desc");
+          g.setStartMapLink("Summer in da city");
 
-    @Test
-    public void renderTemplate() {
-        Content html = views.html.index.render("Your new application is ready.");
-        assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("Your new application is ready.");
+          g.save();
+       }});
     }
 
 
