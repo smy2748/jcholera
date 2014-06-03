@@ -29,6 +29,8 @@ public class Fort extends Controller {
     }
 
     public static Result showGame(Long id){
-       return ok();
+       Game game = Game.find.byId(id);
+
+       return ok(GameShow.render(game));
     }
 }

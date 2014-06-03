@@ -1,0 +1,18 @@
+@(game: Game)
+
+@main(""){
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Name</h3>
+            <p>@game.getName()</p>
+
+            <h3>Description</h3>
+            <p>@game.getDescription()</p>
+
+            <h3>Map Link</h3>
+            <p>@game.getStartMapLink()</p>
+        </div>
+    </div>
+
+}
