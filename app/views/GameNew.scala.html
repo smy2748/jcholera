@@ -1,0 +1,17 @@
+@(gameForm: Form[forms.GameForm])
+
+@main(""){
+  
+  @helper.form(action=routes.Fort.newFort()){
+    
+    @helper.inputText(gameForm("name"))
+
+    @helper.inputText(gameForm("description"))
+ 
+    @helper.inputText(gameForm("mapLink"))
+
+    <input type="submit" />
+
+  }
+
+}

@@ -4,8 +4,10 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /forts                      controllers.Fort.index()
-GET     /forts/                     controllers.Fort.index()
+GET     /fort                       controllers.Fort.index()
+GET     /fort/                      controllers.Fort.index()
+GET     /game/new    		    controllers.Fort.newFort()
 
+POST    /game/new                   controllers.Fort.createFort()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

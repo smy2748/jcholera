@@ -5,11 +5,25 @@ import play.*;
 import play.mvc.*;
 
 import views.html.*;
+import play.data.*;
+import forms.*;
 
 public class Fort extends Controller {
+
+    final static Form<GameForm> gameForm = Form.form(GameForm.class);   
 
     public static Result index() {
         return ok(GameIndex.render(Game.find.all()));
     }
 
+    public static Result newFort(){
+        return ok(GameNew.render(gameForm));
+    }
+
+    public static Result createFort(){
+       Form<GameForm> completedForm = gameForm.bindFromRequest();
+       Game g = new Game(completedForm.name, completedForm.description, completedForm.mapLink);
+       g.save();
+       return ok(); 
+    }
 }
