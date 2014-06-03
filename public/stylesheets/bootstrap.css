@@ -6138,10 +6138,10 @@ a.thumbnail.active {
 .nounderline:hover,
 .nounderline:visited,
 .nounderline:focus {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .thumbnail a:hover p {
- text-decoration: none 
+ text-decoration: none;
 }
 
