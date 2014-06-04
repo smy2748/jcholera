@@ -1,0 +1,20 @@
+@(gameForm: Form[forms.GameForm])(id:Long)
+
+@main(""){
+
+    <div class="container-fluid">
+        <div class="row">
+            @helper.form(action=routes.Fort.edit(id)){
+
+                @helper.inputText(gameForm("name"))
+
+                @helper.textarea(gameForm("description"))
+
+                @helper.inputText(gameForm("mapLink"))
+
+                <input type="submit" value="Save"/>
+            }
+        </div>
+    </div>
+
+}

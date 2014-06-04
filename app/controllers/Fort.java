@@ -28,8 +28,24 @@ public class Fort extends Controller {
        return ok(GameShow.render(g)); 
     }
 
-    public static Result edit(){
-      
+    public static Result edit(Long id){
+        Game g = Game.find.byId(id);
+        GameForm filled = new GameForm(g);
+
+      return ok(views.html.Game.Edit.render(gameForm.fill(filled), g.getId()));
+    }
+
+    public static Result update(Long id){
+        Form<GameForm> gf = gameForm.bindFromRequest();
+        //TODO: Save the update
+
+        Game g = Game.find.byId(id);
+        g.setName(gf.field("name").value());
+        g.setDescription(gf.field("description").value());
+        g.setStartMapLink(gf.field("mapLink").value());
+
+        g.save();
+        return ok(GameShow.render(g));
     }
 
     public static Result showGame(Long id){
