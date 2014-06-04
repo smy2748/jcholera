@@ -30,6 +30,8 @@ public class Game extends Model{
  
   @Constraints.Required                                                                        
   public String startMapLink;
+  
+  public List<Turn> turns;
                                                                                                
  
   public static Finder<Long,Game> find = new Finder<Long,Game>(Long.class, 
