@@ -6,7 +6,7 @@
 create table game (
   id                        bigint auto_increment not null,
   name                      varchar(255),
-  description               varchar(255),
+  description               TEXT,
   start_map_link            varchar(255),
   constraint pk_game primary key (id))
 ;

@@ -3,22 +3,23 @@
 @main(""){
 
 
-
-<div class="well well-lg">
+<div class="container">
 <div class="row">
 <h1 class="pull-left">Hosted Games</h1>
 <h1><a class="btn btn-primary pull-right" href= @controllers.routes.Fort.newFort()>New Fort</a></h1>
 </div>
-<div class="row">
+<br>
 @for(g <- games){
-  <div class="col-xs-5 col-md-3">
-   <a class="thumbnail nounderline"href=@{controllers.routes.Fort.showGame(g.getId)}>
-    <h2 class = "text-center nounderline">@g.getName()</h2>
-    <p class="nounderline">@g.getDescription()</p>
-   </a>
-  </div>
+  <div class="row well well-small">
+    <div class="col-sm-6">
+      <a href=@controllers.routes.Fort.showGame(g.getId()) ><h3>@g.getName()</h3></a>
+    </div>
+    <div class="col-sm-12">
+      <p>@g.getTrimmedDes()</p>
+    </div>
+  </div>    
 }
-</div>
+
 </div>
 
       

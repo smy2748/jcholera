@@ -24,7 +24,8 @@ public class Game extends Model{
  
   @Constraints.Required
   public String name;
- 
+  
+  @Column(columnDefinition = "TEXT") 
   public String description;                                                                   
  
   @Constraints.Required                                                                        
@@ -66,11 +67,11 @@ public class Game extends Model{
         this.startMapLink = startMapLink;
     }
 
-    public static Finder<Long, Game> getFind() {
-        return find;
-    }
+    public String getTrimmedDes(){
+      if(this.description != null && this.description.length() >1000){
+        return description.substring(0,1000)+"...";
+      }
 
-    public static void setFind(Finder<Long, Game> find) {
-        Game.find = find;
+      return description;
     }
 }
